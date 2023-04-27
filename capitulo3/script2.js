@@ -434,7 +434,243 @@ function algoritmo134(){
         sênior        maiores de 18 anos
     */
 
-    
+    var idadeNadador = parseInt(prompt("Qual a idade do nadador"));
+    if(idadeNadador >= 5 && idadeNadador <= 7){
+        console.log("Categoria infantil A");
+    }else if(idadeNadador >= 8 && idadeNadador <= 10){
+        console.log("Categoria infantil B");
+    }else if(idadeNadador >= 11 && idadeNadador <= 13){
+        console.log("Categoria juvenil A");
+    }else if(idadeNadador >= 14 && idadeNadador <= 17){
+        console.log("Categoria juvenil B");
+    }else if(idadeNadador >= 18){
+        console.log("Categoria senior");
+    }else{
+        console.log("Não existe categoria para essa idade");
+    }
 }
-algoritmo133();
+
+function algoritmo135(){
+    //Criar um algoritmo que leia a idade de uma pessoa e informara sua classe eleitoral:
+        //não-eleitor (abaixo de 16 anos)
+        //eleitor obrigatório (entre 18 e 65 anos)
+        //eleitor facultativo (entre 16 e 18 anos e maior de 65 anos)
+
+    var idade = parseInt(prompt("Qual a idade"));
+    if(idade <= 16){
+        console.log("Não é eleitor");
+    }else if(idade >= 18 && idade <= 65){
+        console.log("Eleitor obrigatório");
+    }else{
+        console.log("Eleitor facultativo");
+    }
+}
+
+function algoritmo136(){
+    //Depois da liberação do governo para as mensalidades dos planos de saúde, as pessoas começaram a fazer pesquisas para descobrir um bom plano, não muito caro. Um vendedor de um plano de saúde apresentou a tabela a seguir. Criar um algoritmo que entre com o nome e a idade de uma pessoa e imprimir o nome e o valor que ela deverá pagar.
+        //ate l0 anos -R$ 30 00
+        //acima de 10 até 29 anos - R$ 60,00
+        //acima de 29 até 45 anos - R$ 120,00
+        //acima de 45 até 59 anos - R$ 150,00
+        //acima de 59 até 65 anos - R$ 250,00
+        //maior que 65 anos - R$ 400,00
+
+    var nome = prompt("Nome da pessoa");
+    var idade = parseInt(prompt("Idade da pessoa"));
+
+    if(idade <= 10){
+        console.log(nome + " pagará 30 reais");
+    }else if(idade <= 29){
+        console.log(nome + " pagará 60 reais");
+    }else if(idade <= 45){
+        console.log(nome + " pagará 120 reais");
+    }else if(idade <= 45){
+        console.log(nome + " pagará 150 reais");
+    }else if(idade <= 59){
+        console.log(nome + " pagará 150 reais");
+    }else if(idade <= 65){
+        console.log(nome + " pagará 250 reais");
+    }else{
+        console.log(nome + " pagará 400 reais");
+    }
+}
+
+function algoritmo137(){
+    //Ler três valores inteiros (variáveis a, b e c) e efetuar o cálculo da equação de segundo grau, apresentando: as duas raízes, separa os valores informados for possível fazer o cálculo (delta positivo ou zero); a mensagem "Não há raízes reais", se não for possível fazer o cálculo (delta negativo); e a mensagem "Não é equação do segundo grau", se o valor de a for igual a zero.
+
+    var a = parseInt(prompt("Valor de A"));
+    var b = parseInt(prompt("Valor de B"));
+    var c = parseInt(prompt("Valor de C"));
+
+    
+
+}
+
+function algoritmo138(){
+    //Ler um número inteiro entre 1 e 12 e escrever o mês correspondente. Caso o usuário digite um número fora desse intervalo, deverá aparecer uma mensagem informando que não existe mês com este número.
+
+    var mes = parseInt(prompt("Digite um número entre 1 e 12"));
+
+    switch (mes) {
+        case 1:
+            console.log("Janeiro");
+            break;
+        case 2:
+            console.log("Fevereiro");
+            break;
+        case 3:
+            console.log("Março");
+            break;
+        case 4:
+            console.log("Abril");
+            break;
+        case 5:
+            console.log("Maio");
+            break;
+        case 6:
+            console.log("Junho");
+            break;
+        case 7:
+            console.log("Julho");
+            break;
+        case 8:
+            console.log("Agosto");
+            break;
+        case 9:
+            console.log("Setembro");
+            break;
+        case 10:
+            console.log("Outubro");
+            break;
+        case 3:
+            console.log("Novembro");
+            break;
+        case 4:
+            console.log("Dezembro");
+            break;
+        default:
+            console.log("Não existe mês correspondente")
+            break;
+    }
+}
+
+function algoritmo139(){
+    //Sabendo que somente os municípios que possuem mais de 20.000 eleitores aptos têm segundo turno nas eleições para prefeito caso o primeiro colocado não tenha mais do que 50% dos votos, fazer um algoritmo que leia o nome do município, a quantidade de eleitores aptos, o número de votos do candidato mais votado e informar se ele terá ou não segundo turno em sua eleição municipal.
+
+    var nomeMunicipio = prompt("Digite o nome do município");
+    var qntEleitores = parseInt(prompt("Quantidade de eleitores aptos para votar"));
+    var votos = parseFloat(prompt("Quantidade de votos do candidato mais votado"));
+
+    if(qntEleitores > 20.000 && votos <= Math.floor(qntEleitores/2)){
+        console.log(nomeMunicipio + " terá segundo turno");
+    }else{
+        console.log(nomeMunicipio + " não terá segundo turno");
+    }
+}
+
+function algoritmo140(){
+    //Um restaurante faz uma promoção semanal de descontos para clientes de acordo com as iniciais do nome da pessoa. Criar um algoritmo que leia o primeiro nome do cliente, o valor de sua conta e se o nome iniciar com as letras A, D, M ou S, dar um desconto de 30%. Para o cliente cujo nome não se inicia por nenhuma dessas letras, exibir a mensagem "Que pena. Nesta semana o desconto não é para seu nome; mas continue nos prestigiando que sua vez chegara".
+
+    var primeiroNome = prompt("Digite o primeiro nome");
+    var valorConta = parseFloat(prompt("Qual o valor da conta"));
+    var primeiraLetra = primeiroNome.substring(0,1);
+    var desconto = valorConta - (valorConta * 0.30);
+    if(primeiraLetra == "A" || primeiraLetra == "a" || primeiraLetra == "D" || primeiraLetra == "d" || primeiraLetra == "M" || primeiraLetra == "m" || primeiraLetra == "S" || primeiraLetra == "s"){
+        console.log(primeiroNome + " o valor da conta com desconto de 30% é " + desconto);
+    }else{
+       console.log("Que pena. Nesta semana o desconto não é para seu nome; mas continue nos prestigiando que sua vez chegará"); 
+    }
+
+}
+
+function algoritmo141(){
+    //Criar um algoritmo que leia o nome e o total de pontos de três finalistas de um campeonato de pingue-pongue e exibir a colocação da seguinte forma:
+        //vencedor: ___________ xxx pontos
+        //segundo colocado: ________ xxx pontos
+        //terceiro colocado: _________ xxx pontos
+    
+    var nome1 = prompt("Digite o primeiro nome");
+    var pontos1 = parseInt(prompt("Quantidade de pontos"));
+    var nome2 = prompt("Digite o segundo nome");
+    var pontos2 = parseInt(prompt("Quantidade de pontos"));
+    var nome3 = prompt("Digite o terceiro nome");
+    var pontos3 = parseInt(prompt("Quantidade de pontos"));
+
+    var aux;
+    var auxNome;
+
+    if(pontos1 < pontos2){
+        aux = pontos1;
+        pontos1 = pontos2;
+        pontos2 = aux;
+        auxNome = nome1;
+        nome1 = nome2;
+        nome2 = auxNome;
+    }else if(pontos1 < pontos3){
+        aux = pontos1;
+        pontos1 = pontos3;
+        pontos3 = aux;
+        auxNome = nome1;
+        nome1 = nome3;
+        nome3 = auxNome;
+    }else if(pontos2 < pontos3){
+        aux = pontos2;
+        pontos2 = pontos3;
+        pontos3 = aux;
+        auxNome = nome2;
+        nome2 = nome3;
+        nome3 = auxNome;
+    }
+
+    console.log("Vencedor: " + nome1 + " " + pontos1 + " pontos");
+    console.log("Segundo lugar: " + nome2 + " " + pontos2 + " pontos");
+    console.log("Terceiro lugar: " + nome3 + " " + pontos3 + " pontos");
+
+}
+
+function algoritmo142(){
+    //Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o mesmo número de pontos, criar um algoritmo que informe se uma equipe foi classificada, de acordo com a seguinte especificação:
+        //ler os pontos obtidos por cada jogador da equipe;
+        //mostrar esses valores em ordem decrescente;
+        //se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles; senão, imprimir a mensagem "Equipe desclassificada""
+    
+    var jogador1 = parseFloat(prompt("Digite os pontos do primeiro jogador"));
+    var jogador2 = parseFloat(prompt("Digite os pontos do segundo jogador"));
+    var jogador3 = parseFloat(prompt("Digite os pontos do terceiro jogador"));
+    var aux;
+
+    if(jogador1 > jogador2){
+        aux = jogador1;
+        jogador1 = jogador2;
+        jogador2 = aux;
+    }else if(jogador1 > jogador3){
+        aux = jogador1;
+        jogador1 = jogador3;
+        jogador3 = aux;
+    }else if(jogador2 > jogador3){
+        aux = jogador2;
+        jogador2 = jogador3;
+        jogador3 = aux;
+    }
+    console.log("Jogador 1: " + jogador1 + " pontos");
+    console.log("Jogador 2: " + jogador2 + " pontos"); 
+    console.log("Jogador 3: " + jogador3 + " pontos");
+
+    var somaPontos = jogador1 + jogador2 + jogador3;
+    if(somaPontos > 100){
+        console.log("Média: " + (somaPontos/3).toFixed(2));
+    }else{
+        console.log("Equipe desclassificada");
+    }
+
+
+}
+
+function algoritmo143(){
+    //Criar um algoritmo que verifique a(s) letra(s) central(is) de uma palavra. Se o numero de caracteres for ímpar, ele verifica se a letra central é uma vogal; caso contrario verifica se e um dos digrafos rr ou ss (só precisa, testar letras minusculas)
+
+    
+
+}
+algoritmo142();
  
